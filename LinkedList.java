@@ -40,4 +40,29 @@ public class LinkedList {
 			current = current.next;
 		}
 	}
+	
+	public void deleteAtFirst() {
+		if(head == null){
+			return;
+		}
+		
+		head = head.next;
+	}
+	
+	public void deleteAtLast(){
+		if(head == null){
+			return;
+		}
+		if(head.next == null){
+			head = null;
+			return;
+		}
+		
+		Node current = head;
+		while(current.next.next != null){
+			current = current.next;
+		}
+		
+		current.next = null;
+	}
 }
