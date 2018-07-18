@@ -65,4 +65,22 @@ public class LinkedList {
 		
 		current.next = null;
 	}
+	
+	public boolean hasCycle() {
+		if(head == null){
+			return false;
+		}
+		
+		Node slow = head;
+		Node fast = head.next;
+		while(slow != null && fast != null && fast.next != null){
+			if(fast == slow){
+				return true;
+			}
+			slow = slow.next;
+			fast = fast.next.next;
+		}
+		
+		return false;
+	}
 }
